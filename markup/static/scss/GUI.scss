@@ -1,9 +1,65 @@
 .button {
     border-radius: $default-radius;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    background-color: $button-bg;
+    box-shadow: 0 0 1px 0 rgba(#000, 0.2), 0 1px 2px 0 rgba(#000, 0.1);
     color: $button-color;
     text-decoration: none;
-    padding: 6px 30px;
+    padding: 6px 35px;
     display: inline-block;
+    transition: all $default-time;
+
+    &:hover {
+        color: $button-bg;
+        background-color: $button-color;
+
+    }
+}
+
+.checkbox-contain {
+    position: relative;
+    display: inline-block;
+
+    label {
+        width: 40px;
+        height: 20px;
+        border-radius: 100px;
+        background-color: rgba(#000, 0.05);
+        display: block;
+        position: relative;
+        cursor: pointer;
+        transition: all $default-time;
+        &:hover {
+            &::after {
+                box-shadow: 0 0 0 4px rgba(255, 216, 64, 0.6);
+            }
+        }
+
+        &::after {
+            content: "";
+            width: 24px;
+            height: 24px;
+            display: block;
+            border-radius: 100px;
+            background-color: #fff;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            box-shadow: 0 1px 2px 0 rgba(#000, 0.2), 0 1px 4px 0 rgba(#000, 0.1), 0 0 1px 0 rgba(#000, 0.2);
+            cursor: pointer;
+            transition: all $default-time;
+        }
+    }
+
+    input[type=checkbox] {
+        display: none;
+
+        &:checked + label {
+            background-color:  $brand-black;
+            &::after {
+                left: calc(100% - 24px);
+                transition: all $default-time;
+            }
+        }
+    }
 }

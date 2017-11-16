@@ -1,0 +1,78 @@
+.main {
+    width: 82.64%;
+    max-width: 952px;
+    margin: $default-margin*4;
+    background-color: #fff;
+
+    &__top-action {
+        padding: 27px 48px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(#000, 0.1);
+        margin-bottom: 28px;
+
+        .checkbox-contain {
+            margin-left: $default-margin*2;
+        }
+    }
+
+    &__top {
+        margin-bottom: 34px;
+    }
+}
+
+.team__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 213px;
+    padding: 0 $default-margin;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.team__item {
+    width: calc(33% - 16px);
+    text-align: center;
+    line-height: 1.71;
+	color: $button-color;
+    margin: 0 $default-margin;
+    text-decoration: none;
+    margin-bottom: 24px;
+	line-height: 1.71;
+
+    @media #{$medium} {
+        width: calc(25% - 16px);
+    }
+
+    &.add-new {
+        position: relative;
+        background-color: rgba(#000, 0.05);
+	    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.4);
+        border-radius: 50%;
+        transition: all $default-time;
+        font-size: 16px;
+
+        &::before {
+            content: "";
+            display: block;
+            margin-top: 100%
+        }
+
+        &:hover {
+            background-color: rgba(#000, 0.1);
+        }
+
+        span {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .avatar {
+        width: 100%;
+    	border: solid 1px rgba(0, 0, 0, 0.05);
+    }
+}

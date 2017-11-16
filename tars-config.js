@@ -13,14 +13,13 @@ module.exports = {
         "workflow": "concat"
     },
     "js": {
-        "workflow": "concat",
+        "workflow": "modular",
         "bundler": "webpack",
-        "lint": true,
+        "lint": false,
         "useBabel": true,
         "removeConsoleLog": true,
         "webpack": {
-            "useHMR": false,
-            "providePlugin": {}
+            "useHMR": false
         },
         "jsPathsToConcatBeforeModulesJs": [],
         "lintJsCodeBeforeModules": false,
@@ -46,8 +45,8 @@ module.exports = {
     "minifyHtml": false,
     "generateStaticPath": true,
     "buildPath": "./builds/",
-    "useBuildVersioning": true,
-    "useArchiver": true,
+    "useBuildVersioning": false,
+    "useArchiver": false,
     "ulimit": 4096,
     "templater": "handlebars",
     "cssPreprocessor": "scss",
@@ -58,6 +57,5 @@ module.exports = {
         "staticFolderName": "static",
         "imagesFolderName": "img",
         "componentsFolderName": "components"
-    },
-    "staticPrefix": "static/"
+    }
 };

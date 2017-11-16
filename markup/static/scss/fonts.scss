@@ -17,4 +17,35 @@
 $CustomFont: 'CustomFont', Helvetica, Arial, sans-serif;
 */
 
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+//@include font-face(ralewaylight, "../fonts/Raleway-Light");
+
+@include font-face(omnigon, "../fonts/omnigon");
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');

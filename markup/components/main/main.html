@@ -1,5 +1,54 @@
-<main class="main-container">
-    <div class="main-contaent">
-
+<main class="main">
+    <div class="main__top">
+        <div class="main__tabs">
+            <ul class="tabs">
+                <li>
+                    <a href="#detail">Detail</a>
+                </li>
+                <li>
+                    <a href="#content" class="active">Content</a>
+                </li>
+                <li>
+                    <a href="#ads">Ads</a>
+                </li>
+                <li>
+                    <a href="#data-capture">Data capture</a>
+                </li>
+                <li>
+                    <a href="#look-and-feel">Look and feel</a>
+                </li>
+            </ul>
+        </div>
+        <div class="main__top-action">
+            <span>Present in random order</span>
+            <div class="checkbox-contain">
+                <input type="checkbox" id="random"><label for="random"></label>
+            </div>
+        </div>
+    </div>
+    <div class="main__content">
+        <div class="tabs__content" id="detail"></div>
+        <div class="tabs__content active" id="content">
+            <div class="tooltip approve">Embed at least 2 players*</div>
+            <div class="team__list">
+                {{#each teamList}}
+                    {{#if this.link }}
+                        <a href="{{this.link}}" class="team__item">
+                            {{#if image}}
+                                <img class="avatar team__item-avatar" src="{{this.image}}" srcset="{{this.imageSet}}" alt="{{this.name}}">
+                            {{else}}
+                                <img class="avatar team__item-avatar" src="%=static=%img/general/placeholder.png" srcset="%=static=%img/general/placeholder@2x.png 2x, %=static=%img/general/placeholder@3x.png 3x">
+                            {{/if}}
+                            <span>{{this.name}}</span>
+                        </a>
+                    {{else}}
+                        <a href="#" class="team__item add-new"><span class="icon icon-plus"></span></a>
+                    {{/if}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="tabs__content" id="ads"></div>
+        <div class="tabs__content" id="data-capture"></div>
+        <div class="tabs__content" id="look-and-feel"></div>
     </div>
 </main>

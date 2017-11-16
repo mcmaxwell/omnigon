@@ -1,3 +1,21 @@
 .sidebar {
     background-color: $sidebar-bg;
+    min-width: 320px;
+    width: 320px;
+
+    @media #{$medium} {
+        min-width: 444px;
+        width: 40%;
+        max-width: 508px;
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        margin-top: $default-margin;
+    }
+
+    .button__add-vote {
+        margin: 6px $default-margin*2 $default-margin*2;
+    }
 }

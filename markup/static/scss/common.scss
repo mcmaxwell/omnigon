@@ -1,15 +1,187 @@
-// Common styles of the project
-
 html, body {
-    height: 100%;
-}
-
-* html .page__wrapper {
     height: 100%;
 }
 
 body {
     font-family: $default-font;
     line-height: 1.43;
-    font-size: rem-calc(14);
+    font-size: 14px;
+    min-width: 1156px;
+}
+
+.page__wrapper {
+    display: flex;
+    min-height: 100%;
+    background-image: $main-bg;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.logo {
+    font-size: 18px;
+	font-weight: bold;
+	line-height: 1.33;
+	letter-spacing: 0.5px;
+	color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.icon {
+    display: inline-block;
+
+    &::before {
+        font-family: omnigon;
+    }
+
+    &.icon-plus {
+        &::before {
+            content: "\e901"
+        }
+    }
+
+    &.icon-check {
+        &::before {
+            content: "\e900"
+        }
+    }
+}
+
+.voites {
+    &__contain {
+        border-top: 1px solid $color-line;
+        margin-bottom: 11px;
+    }
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__title {
+        color: rgba(#fff, 0.9);
+        font-size: 12px;
+    	font-weight: 500;
+    	line-height: 2.0;
+        padding: 12px $default-margin*2;
+        display: block;
+    }
+
+    &__item {
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 12px $default-margin*2;
+        transition: all $default-time;
+
+        &.new-vote,
+        &:hover {
+            background-color: $brand-color;
+            color: $brand-black;
+            font-weight: 700;
+        }
+
+        &-avatar {
+            min-width: 48px;
+            width: 48px;
+            height: 48px;
+            min-height: 48px;
+            margin-right: $default-margin*2;
+
+            &.voite-new-img {
+                background-color: rgba(#fff, 0.6);
+            }
+        }
+    }
+}
+
+.toggle-link {
+    display: inline-block;
+    width: 18px;
+	height: 12px;
+    padding: 19px;
+    position: relative;
+
+    span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        margin-top: -1px;
+
+        &::after,
+        &::before {
+            content: "";
+            width: 100%;
+            position: absolute;
+            height: 2px;
+            left: 0;
+            background-color: #fff;
+        }
+
+        &::after {
+            top: -5px;
+        }
+
+        &::before {
+            bottom: -5px;
+        }
+
+    }
+}
+
+.tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+
+    li {
+        width: 100%;
+    }
+
+    a {
+        color: $button-color;
+        text-decoration: none;
+        text-align: center;
+    	line-height: 3.43;
+        display: block;
+        border-bottom: 1px solid rgba(#000, 0.1);
+        transition: all $default-time;
+
+        &.active,
+        &:hover {
+            font-weight: 700;
+            border-color: $brand-black;
+        }
+    }
+
+    &__content {
+        position: relative;
+    }
+}
+
+.tooltip {
+    position: absolute;
+    left: 16px;
+    top: 0;
+
+    &.approve {
+        color: $brand-approve;
+
+        &:before {
+            content: "\e900";
+            font-family: omnigon;
+            display: inline-block;
+            margin-right: $default-margin;
+        }
+    }
 }

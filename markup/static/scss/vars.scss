@@ -1,9 +1,23 @@
 $default-font: 'Roboto', sans-serif;
 
-$button-color: rgba(0, 0, 0, 0.9);
+$brand-color: #ffd840;
+$brand-black: #303030;
+$brand-approve: #26bf8c;
 
-$sidebar-bg: #303030;
+$button-color: rgba(#000, 0.9);
+$button-bg: rgba(#fff, 0.95);
+
+$sidebar-bg: $brand-black;
+
+$main-bg: linear-gradient(48deg, #eeeeee, #fafafa);
+
+$color-line: rgba(#fff, 0.2);
 
 $default-radius: 4px;
 
 $default-time: 0.3s;
+
+$default-margin: 8px;
+
+$large: "screen and (min-width: 1396px)";
+$medium: "screen and (min-width: 1200px)";

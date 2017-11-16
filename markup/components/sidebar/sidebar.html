@@ -1,22 +1,33 @@
 <aside class="sidebar">
-    <a href="#" class="toggle-link"><span></span></a>
-    <a href="/" class="logo">OMNIGON</a>
-    <a href="#" class="button">New vote</a>
+    <div class="sidebar__head">
+        <a href="#" class="toggle-link"><span></span></a>
+        <a href="/" class="logo">OMNIGON</a>
+    </div>
+    <a href="#" class="button button__add-vote">New vote</a>
     {{#each voites}}
         <div class="voites__contain">
             <span class="voites__title">{{this.title}}</span>
             <ul class="voites__list">
                 {{#each this.voitesList }}
-                    <li>
-                        <a href="#" class="voites__item {{this.class}}">
-                            {{#if this.image}}
-                                <img class="avatar voites__item-avatar" src="{{this.image}}" srcset="{{this.imageSet}}" alt="{{this.text}}">
-                            {{else}}
-                                <div class="avatar voites__item-avatar avatar-placeholder"></div>
-                            {{/if}}
-                            <span class="voites__item-text">{{this.text}}</span>
-                        </a>
-                    </li>
+                    {{#if this.link}}
+                        <li>
+                            <a href="{{this.link}}" class="voites__item {{this.class}}">
+                                {{#if this.image}}
+                                    <img class="avatar voites__item-avatar" src="{{this.image}}" srcset="{{this.imageSet}}" alt="{{this.text}}">
+                                {{else}}
+                                    <img class="avatar voites__item-avatar" srcset="%=static=%img/general/placeholder@2x.png 2x, %=static=%img/general/placeholder@3x.png 3x">
+                                {{/if}}
+                                <span class="voites__item-text">{{this.text}}</span>
+                            </a>
+                        </li>
+                    {{else}}
+                        <li>
+                            <a href="{{this.link}}" class="voites__item {{this.class}}">
+                                <span class="avatar voites__item-avatar voite-new-img"></span>
+                                <span class="voites__item-text">{{this.text}}</span>
+                            </a>
+                        </li>
+                    {{/if}}
                 {{/each}}
             </ul>
         </div>
