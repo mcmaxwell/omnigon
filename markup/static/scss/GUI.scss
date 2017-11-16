@@ -1,0 +1,9 @@
+.button {
+    border-radius: $default-radius;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    color: $button-color;
+    text-decoration: none;
+    padding: 6px 30px;
+    display: inline-block;
+}

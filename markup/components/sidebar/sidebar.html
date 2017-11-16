@@ -1,0 +1,24 @@
+<aside class="sidebar">
+    <a href="#" class="toggle-link"><span></span></a>
+    <a href="/" class="logo">OMNIGON</a>
+    <a href="#" class="button">New vote</a>
+    {{#each voites}}
+        <div class="voites__contain">
+            <span class="voites__title">{{this.title}}</span>
+            <ul class="voites__list">
+                {{#each this.voitesList }}
+                    <li>
+                        <a href="#" class="voites__item {{this.class}}">
+                            {{#if this.image}}
+                                <img class="avatar voites__item-avatar" src="{{this.image}}" srcset="{{this.imageSet}}" alt="{{this.text}}">
+                            {{else}}
+                                <div class="avatar voites__item-avatar avatar-placeholder"></div>
+                            {{/if}}
+                            <span class="voites__item-text">{{this.text}}</span>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    {{/each}}
+</aside>
